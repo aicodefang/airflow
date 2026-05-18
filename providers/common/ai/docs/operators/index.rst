@@ -21,7 +21,7 @@ Common AI Operators
 Choosing the right operator
 ---------------------------
 
-The common-ai provider ships five operators (and matching ``@task`` decorators). Use this table
+The common-ai provider ships several operators (and matching ``@task`` decorators). Use this table
 to pick the one that fits your use case:
 
 .. list-table::
@@ -46,6 +46,12 @@ to pick the one that fits your use case:
    * - Multi-turn reasoning with tools (DB queries, API calls, etc.)
      - :class:`~airflow.providers.common.ai.operators.agent.AgentOperator`
      - ``@task.agent``
+   * - Chunk documents and produce embedding vectors
+     - :class:`~airflow.providers.common.ai.operators.llamaindex_embedding.EmbeddingOperator`
+     - —
+   * - Retrieve relevant chunks from a vector index
+     - :class:`~airflow.providers.common.ai.operators.llamaindex_retrieval.RetrievalOperator`
+     - —
 
 **LLMOperator / @task.llm** — stateless, single-turn calls. Use this for classification,
 summarization, extraction, or any prompt that produces one response. Supports structured output
